@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alarm Clock</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="Alarm">
+      <!-- heading of alarm -->
+    <div id="clock"> 
+        00:00:00:PM
+    </div>
+    <!-- End Heading  -->
+    <!-- Alarm time container -->
+     <div class="alarm-container">
+        <h1>Set Alarm Time</h1>
+            <div class="alarm-item">
+                <div class="alarmHrs" >
+                    <select id="alarmHrs">
+                       <option value="hour" selected disabled  hidden> Hour</option>
+                    </select>
+                 </div>
+
+                <div class="alarmMin">
+                     <select id="alarmMin">
+                         <option value="minute" selected disabled  hidden> Minute</option>
+                      </select>
+                 </div>
+
+                 <div class="alarmSec">
+                    <select id="alarmSec">
+                        <option value="second" selected disabled  hidden>Second</option>
+                     </select>
+                </div>
+
+                 <div class="ampm">
+                      <select id="ampm" >
+                         <option value="am/pm"> AM </option>
+                         <option value="am/pm"> PM </option>
+                       </select>
+                 </div>
+            </div>
+            <!-- end Alarm container item -->
+        </div>
+        <!-- End Alarm Container -->
+
+        <!-- Buttons -->
+        <div id="button">
+            <div>
+               <button id="setAlarm" onclick="SetAlarm()">Set Alarm</button>
+            </div>
+            <div>
+               <button id="clearAlarm" onclick="clearAlarm">Close Alarm</button>
+            </div>
+        </div>
+        <!-- End Alarm buttons -->
+    </div>
+    <script src="script2.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+
+@font-face {
+    font-family: custom-font;
+    src: url(font/Digital-7.ttf);
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: custom-font;
+}
+.Alarm{
+    margin-top: 50px;
+}
+
+#clock{
+    /* height: auto; */
+    background-color: black;
+    color: white;
+    padding: 1px;
+    width: 80%;
+    margin: auto;
+    font-size: 60px;
+    letter-spacing: 5px;
+    box-shadow: 1px 2px 30px black, 1px 2px 23px black, 1px 2px 33px black, 1px 2px 43px black; */
+    border-radius: 5px;
+}
+
+.alarm-container{
+    width: 80%;
+    margin: auto;
+    padding: 20px 0px;
+    text-align: center;
+    background-color:white;
+    /* box-shadow: 1px 2px 30px black; */
+    box-shadow: 1px 2px 30px black, 1px 2px 23px black, 1px 2px 33px black, 1px 2px 43px black; */
+}
+
+.alarm-container h1{
+    letter-spacing: normal;
+    font-size: 45px;
+    color: #000;
+}
+.alarm-item{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+   
+}
+
+.alarm-item div select {
+    height: 40px;
+    width: 100px;
+    font-size: 22px;
+    font-family: 'Courier New', Courier, monospace;
+    /* font-weight:bold; */
+    border-radius: 30px;
+   /* margin: 2px; */
+   text-align: center;
+}
+
+#button{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    /* box-shadow: 1px 2px 30px black; */
+    box-shadow: 1px 2px 30px black, 1px 2px 23px black, 1px 2px 33px black, 1px 2px 43px black; */
+}
+
+#button div{
+    height: 60px;
+   width: 120px;
+   display: block;
+   margin: 2px 3px;
+   padding: 20px 0;
+}
+
+#button div button{
+    width: inherit;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid black ;
+    cursor: pointer;
+}
+
+#button div:nth-child(1) button,
+#button div:nth-child(2) button:hover{
+    background-color: black;
+    color: white;
+}
+
+#button div:nth-child(1) button:hover{
+    background-color: white;
+    color: #000;
+
+}
+
