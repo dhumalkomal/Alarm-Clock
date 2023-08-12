@@ -1,8 +1,7 @@
 var sound=new Audio("https://freespecialeffects.co.uk/soundfx/bells/church_bells_01.wav");
 // var sound = Audio("http://alphapapa.net/startreksounds/TNG%20-%20Two%20Triple-Tone%20Alarm.wav");
 sound.loop=true;
-// https://freespecialeffects.co.uk/soundfx/bells/church_bells_01.wav
-// http://www.digitpress.com/dpsoundz/26YARSREV1.WAV
+
 var clock=document.getElementById('clock');
 
 var currentTime= setInterval( function() {
