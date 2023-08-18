@@ -1,5 +1,4 @@
-var sound=new Audio("https://freespecialeffects.co.uk/soundfx/bells/church_bells_01.wav");
-// var sound = Audio("http://alphapapa.net/startreksounds/TNG%20-%20Two%20Triple-Tone%20Alarm.wav");
+var sound = new Audio("/soundEffect/clock-alarm-8761.mp3");
 sound.loop=true;
 
 var clock=document.getElementById('clock');
@@ -27,18 +26,19 @@ var currentTime= setInterval( function() {
 }, 1000);
 
 function addZero(time){
-    return (time < 10) ? "0" + time :time ;
+    return (time < 10) ? "0" + time:time ;
 }
 
 //hours Menu
 function hoursMenu() {
     var select = document.getElementById("alarmHrs");
     var hrs = 12;
-    for (let i = 1; i <= hrs; i++) {
+    for (let i = 1; i <= hrs; i++) { // Change "<" to "<="
         select.options[select.options.length] =
             new Option(i < 10 ? "0" + i : i, i);
     }
 }
+
 hoursMenu();
 
 //Minute Menu
@@ -47,7 +47,7 @@ function MinuteMenu() {
     var mins = 59;
     for (let i = 1; i <= mins; i++) {
         select.options[select.options.length] =
-            new Option(i < 10 ? "0" + i : i, i);
+            new Option(i < 10 ? "0" + i:i, i);
     }
 }
 MinuteMenu();
@@ -58,15 +58,18 @@ function SecondMenu() {
     var secs = 59;
     for (let i = 1; i <= secs; i++) {
         select.options[select.options.length] =
-            new Option(i < 10 ? "0" + i : i, i);
+            new Option(i < 10 ? "0" + i:i, i);
     }
 }
 SecondMenu();
 
+var sound = new Audio("/soundEffect/clock-alarm-8761.mp3");
+sound.loop=true;
 
 // Set Alarm 
 function SetAlarm(){
-	// alert("Set Alarm");
+    
+	alert("Set Alarm");
     console.log('SetAlarm function called');
 	var hr=document.getElementById('alarmHrs');
     var min=document.getElementById('alarmMin');
@@ -81,8 +84,8 @@ function SetAlarm(){
     var alarmTime= addZero(selectHours) + ":" +
                    addZero(selectMinutes) + ":" +
                    addZero(selectSeconds) + ":" +
-                   addZero(selectAP) ;
-        //    console.log(AlarmTime);
+                   selectAP ;
+           console.log(alarmTime);
                 document.getElementById('alarmHrs').disabled=true;
                 document.getElementById('alarmMin').disabled=true;
                 document.getElementById('alarmSec').disabled=true;
@@ -111,18 +114,26 @@ function SetAlarm(){
                     }
                     
                     // clock.innerHTML= hours +" :" + minutes+ " :" + seconds +" :" +"AM"+"PM";
-                    var currentTime= clock.textContent = addZero(hours)+ ":" +
-                                                         addZero(minutes) +":" + 
-                                                         addZero(seconds) + ":" 
-                                                         +ampm ;
-
-
+                    var currentTime=  addZero(hours)+ ":"+
+                                      addZero(minutes)+":" + 
+                                      addZero(seconds) + ":" 
+                                      +ampm ;
+                    // console.log(currentTime);
                     if(alarmTime == currentTime){
-                         sound.play();
+                            sound.play();
+                        //  console.log('alarm ringing');
                      }
+                                                         
                 }, 1000);
+
+                // Event listener to start playing the sound when it's ready
+                // sound.addEventListener('canplaythrough', function() {
+                //     sound.play();
+                    
+                // });
                    
 }
+
 
 function clearAlarm(){
                 document.getElementById('alarmHrs').disabled=false;

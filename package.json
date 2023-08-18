@@ -11,5 +11,8 @@
     "url": "git init"
   },
   "author": "Komal Dhumal",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "play-sound": "^1.1.5"
+  }
 }
