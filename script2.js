@@ -1,4 +1,4 @@
-var sound = new Audio("/soundEffect/clock-alarm-8761.mp3");
+var sound = new Audio("/soundEffect/clock-alarm.mp3");
 sound.loop=true;
 
 var clock=document.getElementById('clock');
@@ -9,12 +9,12 @@ var currentTime= setInterval( function() {
     var hours=(12 -(date.getHours()));
     var minutes=date.getMinutes();
     var seconds= date.getSeconds();
-    var ampm= (date.getHours()) < 12 ? "AM" :"PM";
+    var ampm= (date.getHours()) < 12 ? 'AM' :'PM';
     
     if(hours < 0){
         hours = hours * -1;
     }
-    else if(hours == 0){
+    else if(hours == 00){
         hours = 12;
     }
     else{
@@ -22,7 +22,7 @@ var currentTime= setInterval( function() {
     }
     
     // clock.innerHTML= hours +" :" + minutes+ " :" + seconds +" :" +"AM"+"PM";
-     clock.textContent = addZero(hours)+ ":" + addZero(minutes) +":" + addZero(seconds) + ":" +ampm ;
+     clock.textContent = addZero(hours)+ ":" + addZero(minutes) +":" + addZero(seconds) + ":" + ampm ;
 }, 1000);
 
 function addZero(time){
@@ -33,7 +33,7 @@ function addZero(time){
 function hoursMenu() {
     var select = document.getElementById("alarmHrs");
     var hrs = 12;
-    for (let i = 1; i <= hrs; i++) { // Change "<" to "<="
+    for (let i = 1; i <= hrs; i++) { 
         select.options[select.options.length] =
             new Option(i < 10 ? "0" + i : i, i);
     }
@@ -45,9 +45,9 @@ hoursMenu();
 function MinuteMenu() {
     var select = document.getElementById("alarmMin");
     var mins = 59;
-    for (let i = 1; i <= mins; i++) {
+    for (let i = 0; i <= mins; i++) {
         select.options[select.options.length] =
-            new Option(i < 10 ? "0" + i:i, i);
+            new Option(i < 10 ? "0" + i : i, i);
     }
 }
 MinuteMenu();
@@ -56,15 +56,13 @@ MinuteMenu();
 function SecondMenu() {
     var select = document.getElementById("alarmSec");
     var secs = 59;
-    for (let i = 1; i <= secs; i++) {
+    for (let i = 0; i <= secs; i++) {
         select.options[select.options.length] =
-            new Option(i < 10 ? "0" + i:i, i);
+            new Option(i < 10 ? "0" + i : i, i);
     }
 }
 SecondMenu();
 
-var sound = new Audio("/soundEffect/clock-alarm-8761.mp3");
-sound.loop=true;
 
 // Set Alarm 
 function SetAlarm(){
@@ -85,15 +83,18 @@ function SetAlarm(){
                    addZero(selectMinutes) + ":" +
                    addZero(selectSeconds) + ":" +
                    selectAP ;
-           console.log(alarmTime);
+
+           console.log('alarmTime:'+ alarmTime);
+
                 document.getElementById('alarmHrs').disabled=true;
                 document.getElementById('alarmMin').disabled=true;
                 document.getElementById('alarmSec').disabled=true;
                 document.getElementById('ampm').disabled=true;
 
-                var clock= document.getElementById('clock');
+                
 
                 ///Play Audio when item
+                var clock= document.getElementById('clock');
 
                 setInterval( function() {
                     var date= new Date();
@@ -101,12 +102,12 @@ function SetAlarm(){
                     var hours=(12 -(date.getHours()));
                     var minutes=date.getMinutes();
                     var seconds= date.getSeconds();
-                    var ampm= (date.getHours()) < 12 ? "AM" :"PM";
+                    var ampm= (date.getHours()) < 12 ? 'AM' : 'PM';
                     
                     if(hours < 0){
                         hours = hours * -1;
                     }
-                    else if(hours == 0){
+                    else if(hours == 00){
                         hours = 12;
                     }
                     else{
@@ -114,15 +115,18 @@ function SetAlarm(){
                     }
                     
                     // clock.innerHTML= hours +" :" + minutes+ " :" + seconds +" :" +"AM"+"PM";
-                    var currentTime=  addZero(hours)+ ":"+
+                    var currentTime= clock.textContent =  addZero(hours)+ ":"+
                                       addZero(minutes)+":" + 
                                       addZero(seconds) + ":" 
                                       +ampm ;
-                    // console.log(currentTime);
-                    if(alarmTime == currentTime){
-                            sound.play();
-                        //  console.log('alarm ringing');
-                     }
+                   
+                    console.log('Current Time:', currentTime);
+                    console.log('Alarm Time:', alarmTime);
+
+                    if (alarmTime == currentTime) {
+                        console.log('Alarm time matched!');
+                        sound.play();
+                    }
                                                          
                 }, 1000);
 
