@@ -1,4 +1,4 @@
-var sound = new Audio("/soundEffect/clock-alarm.mp3");
+var sound = new Audio("./soundEffect/alarm.mp3");
 sound.loop=true;
 
 var clock=document.getElementById('clock');
