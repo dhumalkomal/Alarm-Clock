@@ -68,7 +68,7 @@ SecondMenu();
 function SetAlarm(){
     
 	alert("Set Alarm");
-    console.log('SetAlarm function called');
+    // console.log('SetAlarm function called');
 	var hr=document.getElementById('alarmHrs');
     var min=document.getElementById('alarmMin');
     var sec=document.getElementById('alarmSec');
@@ -84,7 +84,7 @@ function SetAlarm(){
                    addZero(selectSeconds) + ":" +
                    selectAP ;
 
-           console.log('alarmTime:'+ alarmTime);
+        //    console.log('alarmTime:'+ alarmTime);
 
                 document.getElementById('alarmHrs').disabled=true;
                 document.getElementById('alarmMin').disabled=true;
@@ -120,8 +120,8 @@ function SetAlarm(){
                                       addZero(seconds) + ":" 
                                       +ampm ;
                    
-                    console.log('Current Time:', currentTime);
-                    console.log('Alarm Time:', alarmTime);
+                    // console.log('Current Time:', currentTime);
+                    // console.log('Alarm Time:', alarmTime);
 
                     if (alarmTime == currentTime) {
                         console.log('Alarm time matched!');
