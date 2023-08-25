@@ -1,7 +1,7 @@
 {
   "name": "alarm-clock",
   "version": "1.0.0",
-  "description": "Coding Ninjas Frontend Skill Test using html, CSS and javscript. ",
+  "description": "Coding Ninjas Frontend Skill Test using html, CSS and javscript",
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
