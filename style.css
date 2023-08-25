@@ -105,3 +105,18 @@ body{
 
 }
 
+
+@media only screen and (max-width: 600px) {
+  
+    #clock{
+       font-size:40px;    
+       
+    }
+
+   .alarm-container h1{
+      font-size:30px
+   }
+
+  }
+
+
